@@ -21,8 +21,16 @@
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
 
-Number and name of feature: Locations
-Estimate of time needed to complete: 2:00
-Start time: 9:00
-Finish time: 10:30
-Actual time needed to complete: 1.5
+> Number and name of feature: Locations
+> Estimate of time needed to complete: 2:00
+> Start time: 9:00
+> Finish time: 10:30
+> Actual time needed to complete: 1:00
+
+
+> Number and name of feature: Weather
+> Estimate of time needed to complete: 1:00
+> Start time: 10:30
+> Finish time: 11:30
+> Actual time needed to complete: 1:00
+
