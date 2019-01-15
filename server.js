@@ -30,12 +30,6 @@ function searchToLatLong(query) {
   return location;
 }
 
-function searchWeather() {
-  const geoData = require('./data/darksky.json');
-  const weather = new Weather(geoData);
-  return weather;
-}
-
 function Location(data, query) {
   for (let val in data.results) {
     if (data.results[val].address_components[0].long_name.toLowerCase() === query.toLowerCase()) {
@@ -44,6 +38,21 @@ function Location(data, query) {
       this.longitude = data.results[0].geometry.location.lng;
     }
   }
+  if (!this.formatted_query) {
+    this.status = 500;
+    this.responseText = 'Sorry, something went wrong';
+  }
+}
+
+function searchWeather() {
+  let weather;
+  const weatherData = require('./data/darksky.json');
+  if (!weatherData.daily) {
+    weather = {status: 500, responseText: 'Something went wrong'};
+  } else {
+    weather = new Weather(weatherData);
+  }
+  return weather;
 }
 
 function Weather(weatherData) {
@@ -55,6 +64,5 @@ function Weather(weatherData) {
     const bestTime = timeNew.toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
     output.push({forecast: forecast, time: bestTime})
   }
-  console.log(output);
   return output;
 }

@@ -34,3 +34,8 @@
 > Finish time: 11:30
 > Actual time needed to complete: 1:00
 
+> Number and name of feature: Errors
+> Estimate of time needed to complete: 1:00
+> Start time: 11:30
+> Finish time: 12:00
+> Actual time needed to complete: :30
